@@ -1,0 +1,22 @@
+/* Containers */
+body {
+  display: flex;
+  flex-direction: column; /* header - main - footer عموديا */
+}
+
+main {
+  display: flex;
+  flex-direction: row; /* article + aside أفقي */
+  flex: auto; /* ارتفاع وعرض تلقائي */
+}
+
+/* Content */
+article {
+  flex: 2; /* 2/3 من العرض */
+  overflow-y: auto; /* يسمح بالتمرير داخل المقالة */
+}
+
+aside {
+  flex: 1; /* 1/3 من العرض */
+  overflow-y: auto; /* يسمح بالتمرير داخل aside */
+}
