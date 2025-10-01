@@ -1,15 +1,18 @@
+/* Header */
 header {
-  background-color: #1a1a1a;
-  color: #ffffff;
-  height: 80px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  font-family: 'Source Sans Pro', sans-serif;
+  align-items: center;
+  background-color: #222;
+  padding: 15px 40px;
 }
 
-header ul {
+.logo {
+  font-size: 28px;
+  color: #f9c74f;
+}
+
+nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
@@ -17,44 +20,29 @@ header ul {
   padding: 0;
 }
 
-header ul li a {
-  color: #ffffff;
+nav a {
   text-decoration: none;
+  color: white;
   font-weight: bold;
 }
 
-header ul li.logo {
-  font-size: 24px;
-  margin-right: 20px;
+nav a:hover {
+  color: #f9c74f;
 }
 
-section.banner {
-  background-color: #f2f2f2;
-  height: 400px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
+/* Banner */
+.banner {
+  background: url('https://picsum.photos/1200/400') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
 }
 
-section.banner .banner-text {
-  max-width: 50%;
-}
-
-section.banner h1 {
-  font-size: 36px;
+.banner h1 {
+  font-size: 48px;
   margin-bottom: 20px;
-  color: #333333;
 }
 
-section.banner p {
-  font-size: 18px;
-  line-height: 1.5;
-  color: #555555;
-}
-
-section.banner img {
-  max-width: 45%;
-  height: auto;
-  border-radius: 10px;
+.banner p {
+  font-size: 20px;
 }
