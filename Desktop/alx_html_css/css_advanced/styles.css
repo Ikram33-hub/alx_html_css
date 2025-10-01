@@ -64,3 +64,36 @@ nav a:hover {
   font-size: 1rem;
   color: #555;
 }
+/* Videos List Section */
+.videos-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* المسافة بين الفيديوهات */
+  margin: 20px 0;
+  justify-content: center; /* الفيديوهات تكون في الوسط */
+}
+
+.video-item {
+  flex: 1 1 300px; /* كل فيديو ياخذ مساحة تقريبية */
+  max-width: 350px;
+  background-color: #f5f5f5; /* لون خلفية لكل فيديو */
+  border-radius: 10px; /* الزوايا مدورة */
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* ظل خفيف */
+}
+
+.video-item img {
+  width: 100%;
+  display: block;
+}
+
+.video-item h3 {
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.video-item p {
+  margin: 0 10px 10px 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
