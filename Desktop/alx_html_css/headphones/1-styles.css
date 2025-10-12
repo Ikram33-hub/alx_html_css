@@ -1,0 +1,159 @@
+/* =============================
+   Reset + Variables
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #FF6565;
+  --text-color: #fff;
+  --background-color: #000;
+  --max-width: 1000px;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =============================
+   Header
+============================= */
+header {
+  background-image: url("images/hero-background.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  text-align: center;
+  padding: 100px 20px;
+  max-width: var(--max-width);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a:active {
+  color: var(--main-color);
+}
+
+.hero {
+  margin-top: 60px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  margin-bottom: 30px;
+}
+
+.hero button {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.hero button:hover,
+.hero button:active {
+  opacity: 0.9;
+}
+
+/* =============================
+   What We Do Section
+============================= */
+.what-we-do {
+  text-align: center;
+  max-width: var(--max-width);
+  padding: 100px 20px;
+  background-color: #111;
+}
+
+.what-we-do h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.what-we-do p {
+  margin-bottom: 60px;
+  color: #ccc;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service span {
+  font-size: 60px;
+  color: var(--main-color);
+  margin-bottom: 15px;
+}
+
+.service h3 {
+  margin-bottom: 10px;
+}
+
+.service p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+/* =============================
+   Responsive
+============================= */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .what-we-do {
+    padding: 60px 10px;
+  }
+}
