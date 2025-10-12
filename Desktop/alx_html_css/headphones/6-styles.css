@@ -1,0 +1,168 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root{
+  --bg: #0b0b0b;
+  --accent: #FF6565;
+  --muted: #d6d6d6;
+  --card-bg: #ffffff;
+  --max-width: 1000px;
+}
+
+/* Body */
+body{
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Simple header/hero */
+header{
+  width: 100%;
+  text-align: center;
+  padding: 40px 20px 20px;
+  color: white;
+}
+.navbar{
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { font-weight: 700; font-size: 1.1rem; }
+.nav-links { list-style: none; display:flex; gap:20px; }
+.nav-links a { color: #fff; text-decoration:none; opacity:0.9; }
+.hero { max-width: var(--max-width); margin: 0 auto 30px; padding: 20px; }
+.hero h1{ font-size:2rem; color:white; margin-bottom:8px; }
+.hero p{ color:#ccc; margin-bottom:12px; }
+.hero button{
+  background: var(--accent); color:white; border:none; padding:10px 20px; border-radius:22px;
+  cursor:pointer; transition:opacity .2s;
+}
+.hero button:hover{ opacity:.9; }
+
+/* What we do (kept small) */
+.what-we-do { max-width: var(--max-width); margin: 20px auto; padding: 20px; text-align:center; color: #ddd; }
+
+/* Results Section */
+.results{
+  background: #111;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+}
+.results h2{
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.results-intro{ color:#bbb; margin-bottom: 30px; max-width:700px; text-align:center; }
+
+/* grid for result boxes */
+.results-container{
+  width: 100%;
+  max-width: var(--max-width);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* each result box */
+.result-box{
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  padding: 28px 16px;
+  border-radius: 12px;
+  overflow: visible;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap: 16px;
+  min-height: 120px;
+}
+
+/* pentagon element: drawn via clip-path polygon */
+.pentagon{
+  width: 84px;
+  height: 84px;
+  flex: 0 0 84px;
+  position: relative;
+  z-index: 1;
+  /* center the shape within this box */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-right: 6px;
+}
+
+/* actual visible polygon (use pseudo-element for color/gradient) */
+.pentagon::before{
+  content: "";
+  display:block;
+  width: 100%;
+  height: 100%;
+  /* clip-path to draw regular-ish pentagon */
+  clip-path: polygon(
+    50% 0%,
+    95% 35%,
+    78% 100%,
+    22% 100%,
+    5% 35%
+  );
+  /* gradient fill for depth */
+  background: linear-gradient(135deg, rgba(255,101,101,1) 0%, rgba(255,172,172,0.9) 100%);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45), inset 0 -6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-6%);
+  border-radius: 6px;
+}
+
+/* small inner decoration: another smaller pentagon to create border effect */
+.pentagon::after{
+  content: "";
+  display:block;
+  width: 64%;
+  height: 64%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(
+    50% 0%,
+    90% 36%,
+    74% 100%,
+    26% 100%,
+    10% 36%
+  );
+  background: rgba(255,255,255,0.06);
+  filter: blur(0.2px);
+}
+
+/* result content (text) */
+.result-content { z-index: 2; color: #fff; }
+.result-content h3 { color: #fff; font-size: 1.6rem; margin-bottom:6px; }
+.result-content p { color: #ddd; font-size: 0.95rem; }
+
+/* responsive reductions */
+@media (max-width: 900px){
+  .results-container{ grid-template-columns: repeat(2, 1fr); }
+  .pentagon{ width: 72px; height:72px; }
+}
+@media (max-width: 480px){
+  .results-container{ grid-template-columns: 1fr; }
+  .result-box{ padding:20px; min-height: 100px; }
+  .pentagon{ width:56px; height:56px; }
+  .hero h1{ font-size:1.4rem; }
+}
